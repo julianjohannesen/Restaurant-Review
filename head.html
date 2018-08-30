@@ -1,0 +1,189 @@
+<!--
+      Allows control over where resources are loaded from.
+      Place as early in the <head> as possible, as the tag  
+      only applies to resources that are declared after it.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    
+    Name of web application (only should be used if the website is used as an app)
+    <meta name="application-name" content="Restaurant Reviews">
+    
+    <!-- Theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4285f4">
+    
+    <!-- Short description of the document (limit to 150 characters) -->
+    <!-- This content *may* be used as a part of search engine results. -->
+    <meta name="description" content="A restaurant review app that allows users to specify a location to see and add/edit restaurant reviews in that area.">
+    
+    <!-- Control the behavior of search engine crawling and indexing -->
+    <meta name="robots" content="index,follow"><!-- All Search Engines -->
+    <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+    
+    <!-- Tells Google not to show the sitelinks search box -->
+    <meta name="google" content="nositelinkssearchbox">
+    
+    <!-- Tells Google not to provide a translation for this document -->
+    <meta name="google" content="notranslate">
+    
+    <!-- Verify website ownership -->
+    <meta name="google-site-verification" content="verification_token"><!-- Google Search Console -->
+    <meta name="yandex-verification" content="verification_token"><!-- Yandex Webmasters -->
+    <meta name="msvalidate.01" content="verification_token"><!-- Bing Webmaster Center -->
+    <meta name="alexaVerifyID" content="verification_token"><!-- Alexa Console -->
+    <meta name="p:domain_verify" content="code_from_pinterest"><!-- Pinterest Console-->
+    <meta name="norton-safeweb-site-verification" content="norton_code"><!-- Norton Safe Web -->
+    
+    <!-- Identify the software used to build the document -->
+    <meta name="generator" content="VS Code">
+    
+    <!-- Short description of your document's subject -->
+    <meta name="subject" content="Restaurant reviews by geographic area">
+    
+    <!-- Gives a general age rating based on the document's content -->
+    <meta name="rating" content="General">
+    
+    <!-- Allows control over how referrer information is passed -->
+    <meta name="referrer" content="no-referrer">
+    
+    <!-- Disable automatic detection and formatting of possible phone numbers -->
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Completely opt out of DNS prefetching by setting to "off" -->
+    <meta http-equiv="x-dns-prefetch-control" content="off">
+    
+    <!-- Stores a cookie on the client web browser for identification purposes -->
+    <meta http-equiv="set-cookie" content="name=value; expires=date; path=url">
+    
+    <!-- Specifies the document to appear in a specific frame -->
+    <meta http-equiv="Window-Target" content="_value">
+    
+    <!-- Geo tags -->
+    <meta name="ICBM" content="latitude, longitude">
+    <meta name="geo.position" content="latitude;longitude">
+    <meta name="geo.region" content="US-MA">
+    <meta name="geo.placename" content="Boston">
+
+    <!-- Social Tags -->
+    <meta property="fb:app_id" content="123456789">
+    <meta property="og:url" content="http://example.com/page.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Content Title">
+    <meta property="og:image" content="http://example.com/image.jpg">
+    <meta property="og:description" content="Description Here">
+    <meta property="og:site_name" content="Site Name">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@site_account">
+    <meta name="twitter:creator" content="@individual_account">
+    <meta name="twitter:url" content="http://example.com/page.html">
+    <meta name="twitter:title" content="Content Title">
+    <meta name="twitter:description" content="Content description less than 200 characters">
+    <meta name="twitter:image" content="http://example.com/image.jpg">
+    <!-- disallow Twitter from using your site's info for personalization purposes -->
+    <meta name="twitter:dnt" content="on">
+
+    <!-- Facebook Instant Articles -->
+    <meta charset="utf-8">
+    <meta property="op:markup_version" content="v1.0">
+
+    <!-- The URL of the web version of your article -->
+    <link rel="canonical" href="http://example.com/article.html">
+
+    <!-- The style to be used for this article -->
+    <meta property="fb:article_style" content="myarticlestyle">
+
+    <!-- For IE 10 and below -->
+    <!-- Place favicon.ico in the root directory - no tag necessary -->
+
+    <!-- Icon in the highest resolution we need it for -->
+    <link rel="icon" sizes="192x192" href="/path/to/icon.png">
+
+    <!-- Apple Touch Icon (reuse 192px icon.png) -->
+    <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
+
+    <!-- Safari Pinned Tab Icon -->
+    <link rel="mask-icon" href="/path/to/icon.svg" color="blue">
+    
+    <!-- Set the base URL for all relative URLs within the document -->
+    <base href="https://julianjohannesen.github.io/restuarant-reviews/index.html">
+
+    <!-- Helps prevent duplicate content issues -->
+    <link rel="canonical" href="https://julianjohannesen.github.io/restuarant-reviews/index.html">
+
+    <!-- Links to an AMP HTML version of the current document -->
+    <link rel="amphtml" href="https://julianjohannesen.github.io/restuarant-reviews/amp-version.html">
+
+    <!-- Links to a JSON file that specifies "installation" credentials for the web applications -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Links to information about the author(s) of the document -->
+    <link rel="author" href="humans.txt">
+
+    <!-- Refers to a copyright statement that applies to the link's context -->
+    <link rel="license" href="copyright.html">
+
+    <!-- Gives a reference to a location in your document that may be in another language -->
+    <link rel="alternate" href="" hreflang="es">
+
+    <!-- Provides information about an author or another person -->
+    <link rel="me" href="https://www.linkedin.com/in/julianjohannesen/" type="text/html">
+    <link rel="me" href="mailto:julian.johannesen@gmail.com">
+    <link rel="me" href="sms:+">
+
+    <!-- Links to a document that describes a collection of records, documents, or other materials of historical interest -->
+    <link rel="archives" href="http://example.com/archives/">
+
+    <!-- Links to top level resource in an hierarchical structure -->
+    <link rel="index" href="https://julianjohannesen.github.io/restuarant-reviews/">
+
+    <!-- Provides a self reference - useful when the document has multiple possible references -->
+    <link rel="self" type="application/atom+xml" href="https://julianjohannesen.github.io/restuarant-reviews//atom.xml">
+
+    <!-- The first, last, previous, and next documents in a series of documents, respectively -->
+    <link rel="first" href="http://example.com/article/">
+    <link rel="last" href="http://example.com/article/?page=42">
+    <link rel="prev" href="http://example.com/article/?page=1">
+    <link rel="next" href="http://example.com/article/?page=3">
+
+    <!-- Used when a 3rd party service is utilized to maintain a blog -->
+    <!-- <link rel="EditURI" href="http://example.com/xmlrpc.php?rsd" type="application/rsd+xml" title="RSD"> -->
+
+    <!-- Forms an automated comment when another WordPress blog links to your WordPress blog or post -->
+    <!-- <link rel="pingback" href="http://example.com/xmlrpc.php"> -->
+
+    <!-- Notifies a URL when you link to it on your document -->
+    <link rel="webmention" href="https://julianjohannesen.github.io/restuarant-reviews/webmention">
+
+    <!-- Enables posting to your own domain using a Micropub client -->
+    <link rel="micropub" href="http://example.com/micropub">
+
+    <!-- Open Search -->
+    <link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title">
+
+    <!-- Feeds -->
+    <link rel="alternate" href="https://feeds.feedburner.com/restuarant-reviews" type="application/rss+xml" title="RSS">
+    <link rel="alternate" href="https://julianjohannesen.github.io/restuarant-reviews/feed.atom" type="application/atom+xml" title="Atom 0.3">
+
+    <!-- Prefetching, preloading, prebrowsing -->
+    <!-- More info: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
+    <link rel="dns-prefetch" href="//example.com/">
+    <link rel="preconnect" href="https://www.example.com/">
+    <link rel="prefetch" href="https://www.example.com/">
+    <link rel="prerender" href="http://example.com/">
+    <link rel="preload" href="image.png" as="image">
+      
+        <!-- Used for adding in-document CSS -->
+        <style>
+                /* ... */
+              </style>
+              
+              <!-- JavaScript & No-JavaScript tags -->
+              <script>
+                // function(s) go here
+              </script>
+              <noscript>
+                <!-- No JS alternative -->
+              </noscript>
