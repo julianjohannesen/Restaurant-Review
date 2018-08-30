@@ -17,17 +17,19 @@
 
 <body>
   <header>
-    <!-- Moved h1 above nav -->
-    <h1><a href="/">Restaurant Reviews</a></h1>
     <nav>
+    <h1><a href="/">Restaurant Reviews</a></h1>
+
     </nav>
   </header>
 
   <main id="maincontent">
+    <!-- map container -->
     <section id="map-container">
       <div id="map"></div>
     </section>
-    <section>
+    <!-- filter and restaurant listings -->
+    <section id="restaurants">
       <div class="filter-options">
         <h2>Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
