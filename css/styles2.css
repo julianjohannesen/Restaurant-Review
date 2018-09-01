@@ -1,0 +1,269 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*========= ELEMENTS ==========*/
+html {
+  font-size: calc(112.5% + 0.25vw);
+
+  /*========= COLORS ========*/
+  --text-color: #333;
+  --text-back: #fdfdfd;
+  --heading-color: #f78500; 
+  --heading-back: #333;
+  --link-hover: #3397db;
+  --hero-back: #252831;
+
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+body, td, th, p, ul, li, h1, h2, h3, h4, h5, h6, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  background-color: var(--text-back);
+  color: var(--text-color);
+  display: block;
+  margin: 0;
+  padding: 0;
+  position:relative;
+  text-align: left;
+  font-family: sans-serif;
+}
+
+a {
+	color: var(--heading-color);
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: var(--link-hover);
+	text-decoration: none;
+}
+a img{
+	border: none 0 #fff;
+}
+h1, h2 {
+  color: var(--heading-color);
+  background-color: var(--heading-back);
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 0.5vw;
+  text-transform: uppercase;
+
+}
+h2 {
+  font-size: 1.25em;
+  text-align: left;
+}
+
+/*================== HEADER, MAIN, FOOTER ==================*/
+main#maincontent {
+  background-color: var(--text-back);
+  min-height: 100vh;
+}
+footer#footer {
+  background-color: var(--heading-back);
+  color: var(--text-back);
+  letter-spacing: 0.5vw;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ====================== Navigation ====================== */
+nav {
+  width: 100vw;
+  /* height: auto; */
+  background-color: var(--hero-back);
+  text-align: center;
+}
+
+nav h1 a {
+  color: white;
+}
+
+ul#breadcrumb {
+    list-style: none;
+    background-color: var(--text-back);
+}
+
+/* Display list items side by side */
+ul#breadcrumb li {
+    display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul#breadcrumb li+li:before {
+    padding: 0;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul#breadcrumb li a {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul#breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+/* ====================== Map ====================== */
+div#map {
+  height: 400px;
+  width: 100vw;
+  background-color: var(--text-back);
+}
+
+/* ====================== Restaurant Filtering ====================== */
+div.filter-options {
+  width: 100vw;
+  background-color: var(--link-hover);
+  align-items: center;
+  padding: 0.8em;
+}
+div.filter-options h2 {
+  color: white;
+  background-color: var(--link-hover);
+  padding-bottom: 0.3em;
+}
+div.filter-options select {
+  background-color: white;
+  border: 1px solid white;
+}
+
+/* ====================== Restaurant Listing ====================== */
+
+/* ================== GRID STUFF =================*/
+
+section#restaurants ul#restaurants-list {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+ul#restaurants-list {
+  background-color: #f3f3f3;
+  list-style: outside none none;
+  padding: 2rem;
+  text-align: center;
+}
+ul#restaurants-list li {
+  background-color: var(--heading-back);
+  box-shadow: .25rem .25rem 0.5rem 0.125rem #aaa;
+}
+ul#restaurants-list .restaurant-img {
+  background-color: var(--heading-back);
+  width: 100%;
+}
+
+ul#restaurants-list li h1 {
+  text-align: left;
+}
+
+ul#restaurants-list p {
+  background: var(--heading-back);
+  color: white;
+}
+
+ul#restaurants-list li a {
+  background-color: var(--heading-back);
+  border: 1px solid white;
+  color: var(--heading-color);
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* ================================================================ */
+/* ====================== Restaurant Details ====================== */
+/* ================================================================ */
+
+/* The inside class appears in the body tag in the restaurant details view */
+
+/* ====== GRID BITS ======= */
+body.inside main#maincontent {
+  display:grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-template: repeat(2, 1fr) / repeat(2, 1fr); */
+  place-items: start / start;
+  place-content: start / start;
+}
+
+body.inside section#map-container {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+body.inside section#restaurant-container {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+body.inside section#reviews-container {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+/* ====== OTHER BITS ======= */
+
+body.inside header {
+  width: 100%;
+  z-index: 1000;
+}
+.inside #map-container {
+  /* background: blue none repeat scroll 0 0; */
+}
+body.inside #map {
+  background-color: var(--text-back);
+}
+
+h1#restaurant-name {
+  font-size: 1.2em;
+}
+img#restaurant-img {
+	width: 100%;
+}
+p#restaurant-address {
+}
+p#restaurant-cuisine {
+  background-color: var(--heading-back);
+  color: var(--text-back);
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+	width: 100%;
+}
+section#restaurant-container, section#reviews-container {
+}
+
+#reviews-container {
+}
+
+#reviews-container h2 {
+  color: var(--heading-color);
+  font-weight: 300;
+}
+
+ul#reviews-list {
+}
+
+#reviews-list li {
+  background-color: #fff;
+  border: 2px solid var(--heading-back);
+  list-style-type: none;
+}
+
+#reviews-list li p {
+}
+
+#restaurant-hours td {
+  color: var(--heading-back);
+}
+
+body.inside #footer {
+}

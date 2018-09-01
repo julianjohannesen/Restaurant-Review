@@ -168,7 +168,6 @@ ul#restaurants-list .restaurant-img {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
   min-width: 100%;
 }
 ul#restaurants-list li h1 {
@@ -207,7 +206,11 @@ ul#restaurants-list li a {
 /* ====== GRID BITS ======= */
 body.inside main#maincontent {
   display:grid;
-  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-template: repeat(2, 1fr) / repeat(2, 1fr); */
+  place-items: start / start;
+  place-content: start / start;
 }
 
 body.inside section#map-container {
@@ -230,12 +233,10 @@ body.inside header {
   z-index: 1000;
 }
 .inside #map-container {
-  background: blue none repeat scroll 0 0;
+  /* background: blue none repeat scroll 0 0; */
 }
 body.inside #map {
   background-color: #ccc;
-  height: 100%;
-  width: 100%;
 }
 
 #restaurant-name {
@@ -249,7 +250,7 @@ body.inside #map {
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+	width: 100%;
 }
 #restaurant-address {
   font-size: 3.5vmin;
@@ -265,7 +266,7 @@ body.inside #map {
   padding: 1vmin 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
