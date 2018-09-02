@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/julianjohannesen/mws-restaurant-stage-1#readme",
   "devDependencies": {
-    "eslint-config-google": "^0.9.1"
+    "eslint-config-google": "^0.9.1",
+    "stylelint-config-standard": "^18.2.0"
   }
 }
