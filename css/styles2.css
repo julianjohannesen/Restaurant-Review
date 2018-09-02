@@ -3,87 +3,97 @@
 /* CSS Document */
 
 /*========= ELEMENTS ==========*/
+
 :root {
     /*========= COLORS ========*/
-    --text-color: #333;
-    --text-back: #fdfdfd;
-    --heading-color: #f78500; 
-    --heading-back: #333;
+    --text-color: #333333;
+    --text-back: #FDFDFD;
+    --heading-color: #F78500;
+    --heading-back: #333333;
     --link-hover: rgb(0, 100, 255);
     --hero-back: #252831;
 }
 
 html {
-  font-size: calc(50% + 1.5vw);
+    font-size: calc(50% + 1.5vw);
 }
 
 body, table, td, th, p, ul, li, h1, h2, article, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  background-color: var(--text-back);
-  box-sizing: border-box;
-  color: var(--text-color);
-  display: block;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  position:relative;
-  text-align: left;
+    background-color: var(--text-back);
+    box-sizing: border-box;
+    color: var(--text-color);
+    display: block;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: left;
 }
 
 a {
-	color: var(--heading-color);
-	text-decoration: none;
+    color: var(--heading-color);
+    text-decoration: none;
 }
+
 a:hover, a:focus {
-	color: var(--link-hover);
-  text-decoration: none;
+    color: var(--link-hover);
+    text-decoration: none;
   
 }
+
 a:focus, select:focus, input:focus, button:focus {
-  outline: dotted white 2px;
-  outline-offset: 0;
+    outline: dotted white 2px;
+    outline-offset: 0;
 }
-a img{
-	border: none 0 #fff;
+
+a img {
+    border: none 0 #FFFFFF;
 }
+
 h1, h2 {
-  color: var(--heading-color);
-  background-color: var(--heading-back);
-  text-align: center;
-  font-size: 2em;
-  font-weight: 200;
-  letter-spacing: 0.1em;
-  padding: 0.8vw 1.4vw;
-  text-transform: uppercase;
+    color: var(--heading-color);
+    background-color: var(--heading-back);
+    text-align: center;
+    font-size: 2em;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    padding: 0.8vw 1.4vw;
+    text-transform: uppercase;
 
 }
+
 h2 {
-  font-size: 1.5em;
-  text-align: left;
+    font-size: 1.5em;
+    text-align: left;
 }
 
 /*================== HEADER, MAIN, FOOTER ==================*/
+
 main#maincontent {
-  background-color: var(--text-back);
-  min-height: 100vh;
+    background-color: var(--text-back);
+    min-height: 100vh;
 }
+
 footer#footer {
-  background-color: var(--heading-back);
-  color: var(--text-back);
-  letter-spacing: 0.5vw;
-  text-align: center;
-  text-transform: uppercase;
+    background-color: var(--heading-back);
+    color: var(--text-back);
+    letter-spacing: 0.5vw;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* ====================== Navigation ====================== */
+
 nav {
-  width: 100vw;
-  /* height: auto; */
-  background-color: var(--hero-back);
-  text-align: center;
+    width: 100vw;
+
+    /* height: auto; */
+    background-color: var(--hero-back);
+    text-align: center;
 }
 
 nav h1 a {
-  color: white;
+    color: white;
 }
 
 ul#breadcrumb {
@@ -92,53 +102,62 @@ ul#breadcrumb {
 }
 
 /* Display list items side by side */
+
 ul#breadcrumb li {
     display: inline;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
-ul#breadcrumb li+li:before {
+
+ul#breadcrumb li + li:before {
     padding: 0;
     color: black;
     content: "/\00a0";
 }
 
 /* Add a color to all links inside the list */
+
 ul#breadcrumb li a {
     color: var(--link-hover);
     text-decoration: none;
 }
 
 /* Add a color on mouse-over */
+
 ul#breadcrumb li a:hover {
-    color: #01447e;
+    color: #01447E;
     text-decoration: underline;
 }
+
 /* ====================== Map ====================== */
+
 div#map {
-  height: 400px;
-  width: 100vw;
-  background-color: var(--text-back);
+    height: 400px;
+    width: 100vw;
+    background-color: var(--text-back);
 }
 
 /* ====================== Restaurant Filtering ====================== */
+
 div.filter-options {
-  width: 100vw;
-  background-color: var(--link-hover);
-  align-items: center;
-  padding: 1vw;
+    width: 100vw;
+    background-color: var(--link-hover);
+    align-items: center;
+    padding: 1vw;
 }
+
 div.filter-options h2 {
-  color: white;
-  background-color: var(--link-hover);
-  font-size: 1em;
-  padding-left: 0;
-  text-transform: capitalize;
+    color: white;
+    background-color: var(--link-hover);
+    font-size: 1em;
+    padding-left: 0;
+    text-transform: capitalize;
 }
+
 div.filter-options select {
-  background-color: white;
-  border: 1px solid white;
-  padding: 0.2vw 0.2vw 0.3vw;
+    background-color: white;
+    border: 1px solid white;
+    padding: 0.2vw 0.2vw 0.3vw;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -154,114 +173,123 @@ section#restaurants ul#restaurants-list {
 }
 
 ul#restaurants-list {
-  background-color: #f3f3f3;
-  list-style: outside none none;
-  padding: 2rem;
-  text-align: center;
+    background-color: #F3F3F3;
+    list-style: outside none none;
+    padding: 2rem;
+    text-align: center;
 }
+
 ul#restaurants-list li {
-  background-color: var(--heading-back);
-  box-shadow: .25rem .25rem 0.5rem 0.125rem #aaa;
+    background-color: var(--heading-back);
+    box-shadow: 0.25rem 0.25rem 0.5rem 0.125rem #AAAAAA;
 }
+
 ul#restaurants-list .restaurant-img {
-  background-color: var(--heading-back);
-  width: 100%;
+    background-color: var(--heading-back);
+    width: 100%;
 }
 
 ul#restaurants-list li h1 {
-  font-size: 1.25em;
-  text-align: left;
+    font-size: 1.25em;
+    text-align: left;
 
 }
 
 ul#restaurants-list p {
-  background: var(--heading-back);
-  color: white;
-  padding: 0 2vw;
+    background: var(--heading-back);
+    color: white;
+    padding: 0 2vw;
 }
 
 ul#restaurants-list li a {
-  background-color: var(--heading-back);
-  border: 1px solid white;
-  color: var(--heading-color);
-  display: inline-block;
-  font-size: .8em;
-  margin: 2vw;
-  padding: 0.8vw 1vw;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
+    background-color: var(--heading-back);
+    border: 1px solid white;
+    color: var(--heading-color);
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 2vw;
+    padding: 0.8vw 1vw;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 /* ================================================================ */
+
 /* ====================== Restaurant Details ====================== */
+
 /* ================================================================ */
 
 /* The inside class appears in the body tag in the restaurant details view */
 
 /* ====== GRID BITS ======= */
+
 body.inside main#maincontent {
-  display:grid;
-  grid-auto-rows: min-content;
-  grid-template-columns: repeat(2, 1fr);
-  /* grid-template: repeat(2, 1fr) / repeat(2, 1fr); */
-  align-items: start;
-  justify-items: start;
-  align-content: start;
-  justify-content: start;
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(2, 1fr);
+
+    /* grid-template: repeat(2, 1fr) / repeat(2, 1fr); */
+    align-items: start;
+    justify-items: start;
+    align-content: start;
+    justify-content: start;
 }
 
 body.inside section#map-container {
-  grid-row: 1/2;
-  grid-column: 2/3;
+    grid-row: 1/2;
+    grid-column: 2/3;
 }
+
 body.inside section#restaurant-container {
-  grid-row: 1/2;
-  grid-column: 1/2;
+    grid-row: 1/2;
+    grid-column: 1/2;
 }
+
 body.inside section#reviews-container {
-  grid-row: 2/3;
-  grid-column: 1/2;
+    grid-row: 2/3;
+    grid-column: 1/2;
 }
 
 /* ====== OTHER BITS ======= */
 
 body.inside header {
-  width: 100%;
-  z-index: 1000;
+    width: 100%;
+    z-index: 1000;
 }
 
 body.inside #map {
-  background-color: var(--text-back);
+    background-color: var(--text-back);
 }
 
 h1#restaurant-name {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
+
 img#restaurant-img {
-	width: 100%;
+    width: 100%;
 }
 
 p#restaurant-cuisine {
-  background-color: var(--heading-back);
-  color: var(--text-back);
-  font-weight: 300;
-  text-align: center;
-  text-transform: uppercase;
-	width: 100%;
+    background-color: var(--heading-back);
+    color: var(--text-back);
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 #reviews-container h2 {
-  color: var(--heading-color);
-  font-weight: 300;
+    color: var(--heading-color);
+    font-weight: 300;
 }
 
 #reviews-list li {
-  background-color: #fff;
-  border: 2px solid var(--heading-back);
-  list-style-type: none;
+    background-color: #FFFFFF;
+    border: 2px solid var(--heading-back);
+    list-style-type: none;
 }
 
 #restaurant-hours td {
-  color: var(--heading-back);
+    color: var(--heading-back);
 }
