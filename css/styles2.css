@@ -3,14 +3,14 @@
 
 /*========= ELEMENTS ==========*/
 html {
-  font-size: calc(112.5% + 0.25vw);
+  font-size: calc(50% + 1.5vw);
 
   /*========= COLORS ========*/
   --text-color: #333;
   --text-back: #fdfdfd;
   --heading-color: #f78500; 
   --heading-back: #333;
-  --link-hover: #3397db;
+  --link-hover: rgb(0, 100, 255);
   --hero-back: #252831;
 
 }
@@ -36,7 +36,12 @@ a {
 }
 a:hover, a:focus {
 	color: var(--link-hover);
-	text-decoration: none;
+  text-decoration: none;
+  
+}
+a:focus, select:focus, input:focus, button:focus {
+  outline: dotted white 2px;
+  outline-offset: 0;
 }
 a img{
 	border: none 0 #fff;
@@ -45,13 +50,15 @@ h1, h2 {
   color: var(--heading-color);
   background-color: var(--heading-back);
   text-align: center;
+  font-size: 2em;
   font-weight: 200;
-  letter-spacing: 0.5vw;
+  letter-spacing: 0.1em;
+  padding: 0.8vw 1.4vw;
   text-transform: uppercase;
 
 }
 h2 {
-  font-size: 1.25em;
+  font-size: 1.5em;
   text-align: left;
 }
 
@@ -120,16 +127,19 @@ div.filter-options {
   width: 100vw;
   background-color: var(--link-hover);
   align-items: center;
-  padding: 0.8em;
+  padding: 1vw;
 }
 div.filter-options h2 {
   color: white;
   background-color: var(--link-hover);
-  padding-bottom: 0.3em;
+  font-size: 1em;
+  padding-left: 0;
+  text-transform: capitalize;
 }
 div.filter-options select {
   background-color: white;
   border: 1px solid white;
+  padding: 0.2vw 0.2vw 0.3vw;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -160,12 +170,15 @@ ul#restaurants-list .restaurant-img {
 }
 
 ul#restaurants-list li h1 {
+  font-size: 1.25em;
   text-align: left;
+
 }
 
 ul#restaurants-list p {
   background: var(--heading-back);
   color: white;
+  padding: 0 2vw;
 }
 
 ul#restaurants-list li a {
@@ -173,8 +186,9 @@ ul#restaurants-list li a {
   border: 1px solid white;
   color: var(--heading-color);
   display: inline-block;
-  margin: 0;
-  padding: 0;
+  font-size: .8em;
+  margin: 2vw;
+  padding: 0.8vw 1vw;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -223,7 +237,7 @@ body.inside #map {
 }
 
 h1#restaurant-name {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 img#restaurant-img {
 	width: 100%;

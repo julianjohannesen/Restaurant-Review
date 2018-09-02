@@ -46,7 +46,7 @@
 <body>
   <header>
     <nav>
-    <h1><a href="/" title="Restaurant Reviews">Restaurant Reviews</a></h1>
+    <h1><a href="/" title="Restaurant Reviews" tabindex="-1">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
@@ -60,12 +60,14 @@
       <div class="filter-options">
         <h2>Filter Results</h2>
       <label for="neighborhoods-select">
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-          <option value="all">All Neighborhoods</option>
+        <!-- Focus the element using Tab and use the up/down arrow keys to navigate -->
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" >
+          <option value="all">All Areas</option>
         </select>
       </label>
       <label for="cuisines-select">
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <!-- Focus the element using Tab and use the up/down arrow keys to navigate -->
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" >
           <option value="all">All Cuisines</option>
         </label>
       </select>
