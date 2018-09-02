@@ -1,0 +1,304 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* I know it's bad practice to list the element along with its id or class, but I have trouble keeping track of which class or element appears with which structure in the html, which is why I've predfixed the element to the id or class here. 
+
+How do people get around this problem of knowning where in the html structure various ids and classes appear? 
+
+Also, can you create nested block structures to keep track of rules?E.g.:
+
+.thing {
+  .sub-thing {
+  }
+}
+*/
+
+body,td,th,p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 3vmin;
+	color: #333;
+	line-height: 1.5;
+}
+body {
+	background-color: #fdfdfd;
+	margin: 0;
+	position:relative;
+}
+ul, li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 3vmin;
+	color: #333;
+}
+a {
+	color: orange;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #3397db;
+	text-decoration: none;
+}
+a img{
+	border: none 0 #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 0 2em;
+}
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+main#maincontent {
+  background-color: #f3f3f3;
+  min-height: 100%;
+}
+footer#footer {
+  background-color: #444;
+  color: #aaa;
+  /* This works well on a large screen */
+  font-size: 4vmin;
+  letter-spacing: 1px;
+  /* This works well on a large screen */
+  padding: 4vmin;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* ====================== Navigation ====================== */
+nav {
+  width: 100%;
+  height: auto;
+  background-color: #252831;
+  text-align:center;
+}
+nav h1 {
+  margin: auto;
+  padding: 6vmin;
+}
+nav h1 a {
+  color: #fff;
+  font-size: 3vmax;
+  font-weight: 200;
+  letter-spacing: 0.5vmin;
+  text-transform: uppercase;
+}
+ul#breadcrumb {
+    padding: 2vmin 2vmin 2vmin 3vmin;
+    list-style: none;
+    background-color: #eee;
+    margin: 0;
+    /* width: calc(50% - 2em); */
+}
+
+/* Display list items side by side */
+ul#breadcrumb li {
+    display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul#breadcrumb li+li:before {
+    padding: 1vmin;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul#breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul#breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+/* ====================== Map ====================== */
+div#map {
+  height: 400px;
+  width: 100%;
+  background-color: #ccc;
+}
+/* ====================== Restaurant Filtering ====================== */
+div.filter-options {
+  width: 100%;
+  height: auto;
+  background-color: #3397DB;
+  align-items: center;
+}
+div.filter-options h2 {
+  color: white;
+  font-size: 4vmin;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  padding: 3vmin;
+  padding-bottom: 0;
+}
+div.filter-options select {
+  background-color: white;
+  border: 1px solid #fff;
+  font-family: Arial,sans-serif;
+  font-size: 3vmin;
+  height: 8vmin;
+  letter-spacing: 0;
+  margin: 3vmin;
+  padding: 0 3vmin;
+  width: 45vmin;
+}
+
+/* ====================== Restaurant Listing ====================== */
+ul#restaurants-list {
+  background-color: #f3f3f3;
+  list-style: outside none none;
+  margin: 0;
+  padding: 6vmin 3vmin 12vmin;
+  text-align: center;
+}
+ul#restaurants-list li {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  font-family: Arial,sans-serif;
+  margin: 3vmin;
+  min-height: 100vmin;
+  padding: 0 6vmin 5.5vmin;
+  text-align: left;
+  width: auto;
+}
+ul#restaurants-list .restaurant-img {
+  background-color: #ccc;
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  min-width: 100%;
+}
+ul#restaurants-list li h1 {
+  color: #f18200;
+  font-family: Arial,sans-serif;
+  font-size: 5vmin;
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 5vmin 0 2.5px;
+  text-transform: uppercase;
+}
+ul#restaurants-list p {
+  margin: 0;
+  font-size: 3vmin;
+}
+ul#restaurants-list li a {
+  background-color: orange;
+  border-bottom: 3px solid #eee;
+  color: #fff;
+  display: inline-block;
+  font-size: 3vmin;
+  margin: 3vmin 0 0;
+  padding: 2vmin 6vmin 2.5vmin;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* ================================================================ */
+/* ====================== Restaurant Details ====================== */
+/* ================================================================ */
+
+/* The inside class appears in the body tag in the restaurant details view */
+
+/* ====== GRID BITS ======= */
+body.inside main#maincontent {
+  display:grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-template: repeat(2, 1fr) / repeat(2, 1fr); */
+  place-items: start / start;
+  place-content: start / start;
+}
+
+body.inside section#map-container {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+body.inside section#restaurant-container {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+body.inside section#reviews-container {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+/* ====== OTHER BITS ======= */
+
+body.inside header {
+  width: 100%;
+  z-index: 1000;
+}
+.inside #map-container {
+  /* background: blue none repeat scroll 0 0; */
+}
+body.inside #map {
+  background-color: #ccc;
+}
+
+#restaurant-name {
+  color: #f18200;
+  font-family: Arial,sans-serif;
+  font-size: 6vmin;
+  font-weight: 200;
+  letter-spacing: 0;
+  margin: 0 0 4vmin 0;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+#restaurant-img {
+	width: 100%;
+}
+#restaurant-address {
+  font-size: 3.5vmin;
+  margin: 1vmin 0px;
+}
+#restaurant-cuisine {
+  background-color: #333;
+  color: #ddd;
+  font-size: 3vmin;
+  font-weight: 300;
+  letter-spacing: 1vmin;
+  margin: 0 0 2vmin;
+  padding: 1vmin 0;
+  text-align: center;
+  text-transform: uppercase;
+	width: 100%;
+}
+#restaurant-container, #reviews-container {
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #fff;
+  padding: 4vmin 3vmin 2.5vmin;
+}
+#reviews-container {
+  padding: 2.5vmin 3vmin 6vmin;
+}
+#reviews-container h2 {
+  color: #f58500;
+  font-size: 6vmin;
+  font-weight: 300;
+  letter-spacing: -1px;
+  padding-bottom: 1pt;
+}
+ul#reviews-list {
+  margin: 0;
+  padding: 0;
+}
+#reviews-list li {
+  background-color: #fff;
+  border: 2px solid #f3f3f3;
+  list-style-type: none;
+  margin: 0 0 3vmin;
+  padding: 3vmin;
+}
+#reviews-list li p {
+  margin: 0 0 1vmin;
+}
+#restaurant-hours td {
+  color: #666;
+}
+.body.inside #footer {
+}

@@ -2,32 +2,30 @@
 /* CSS Document */
 
 /*========= ELEMENTS ==========*/
+:root {
+    /*========= COLORS ========*/
+    --text-color: #333;
+    --text-back: #fdfdfd;
+    --heading-color: #f78500; 
+    --heading-back: #333;
+    --link-hover: rgb(0, 100, 255);
+    --hero-back: #252831;
+}
+
 html {
   font-size: calc(50% + 1.5vw);
-
-  /*========= COLORS ========*/
-  --text-color: #333;
-  --text-back: #fdfdfd;
-  --heading-color: #f78500; 
-  --heading-back: #333;
-  --link-hover: rgb(0, 100, 255);
-  --hero-back: #252831;
-
 }
 
-html * {
-    box-sizing: border-box;
-}
-
-body, td, th, p, ul, li, h1, h2, h3, h4, h5, h6, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+body, table, td, th, p, ul, li, h1, h2, article, figcaption, figure, footer, header, hgroup, menu, nav, section {
   background-color: var(--text-back);
+  box-sizing: border-box;
   color: var(--text-color);
   display: block;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
   position:relative;
   text-align: left;
-  font-family: sans-serif;
 }
 
 a {
@@ -206,8 +204,10 @@ body.inside main#maincontent {
   grid-auto-rows: min-content;
   grid-template-columns: repeat(2, 1fr);
   /* grid-template: repeat(2, 1fr) / repeat(2, 1fr); */
-  place-items: start / start;
-  place-content: start / start;
+  align-items: start;
+  justify-items: start;
+  align-content: start;
+  justify-content: start;
 }
 
 body.inside section#map-container {
@@ -229,9 +229,7 @@ body.inside header {
   width: 100%;
   z-index: 1000;
 }
-.inside #map-container {
-  /* background: blue none repeat scroll 0 0; */
-}
+
 body.inside #map {
   background-color: var(--text-back);
 }
@@ -242,8 +240,7 @@ h1#restaurant-name {
 img#restaurant-img {
 	width: 100%;
 }
-p#restaurant-address {
-}
+
 p#restaurant-cuisine {
   background-color: var(--heading-back);
   color: var(--text-back);
@@ -252,18 +249,10 @@ p#restaurant-cuisine {
   text-transform: uppercase;
 	width: 100%;
 }
-section#restaurant-container, section#reviews-container {
-}
-
-#reviews-container {
-}
 
 #reviews-container h2 {
   color: var(--heading-color);
   font-weight: 300;
-}
-
-ul#reviews-list {
 }
 
 #reviews-list li {
@@ -272,12 +261,6 @@ ul#reviews-list {
   list-style-type: none;
 }
 
-#reviews-list li p {
-}
-
 #restaurant-hours td {
   color: var(--heading-back);
-}
-
-body.inside #footer {
 }

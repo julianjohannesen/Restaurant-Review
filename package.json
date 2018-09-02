@@ -1,0 +1,31 @@
+{
+  "name": "restaurant-review",
+  "version": "1.0.0",
+  "description": "A site that allows users to specificy a neighborhood and type of cuisine and then see a list of restaurants meeting those specifications. The restaurant listings include location, hours of operation, and reviews.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julianjohannesen/mws-restaurant-stage-1.git"
+  },
+  "keywords": [
+    "restaurants",
+    "review",
+    "find",
+    "local",
+    "location",
+    "hours",
+    "address"
+  ],
+  "author": "Julian <Julian.Johannesen@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julianjohannesen/mws-restaurant-stage-1/issues"
+  },
+  "homepage": "https://github.com/julianjohannesen/mws-restaurant-stage-1#readme",
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  }
+}

@@ -46,32 +46,32 @@
 <body>
   <header>
     <nav>
-    <h1><a href="/" title="Restaurant Reviews" tabindex="-1">Restaurant Reviews</a></h1>
+    <h1><a href="#" title="Restaurant Reviews" tabindex="-1">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
   <main id="maincontent">
     <!-- map container -->
-    <section id="map-container">
+    <section id="map-container" aria-label="A map of a default neighborhood.  Use the neighborhood selector in the filter-options form to select a neighborhood. Linked icons appear on the map indicating individual restaurants in the neighborhood. The type of restaurant can be filtered using the cuisines selector in the filter-options form.">
       <div id="map"></div>
     </section>
     <!-- filter and restaurant listings -->
-    <section id="restaurants">
-      <div class="filter-options">
+    <section id="restaurants" aria-label="The filter-options form allows users to select a neighborhood and type of cuisine to filter restaurant results. The restaurants-list list shows the filtered results.">
+      <form id="filter-options" class="filter-options">
         <h2>Filter Results</h2>
-      <label for="neighborhoods-select">
-        <!-- Focus the element using Tab and use the up/down arrow keys to navigate -->
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" >
-          <option value="all">All Areas</option>
-        </select>
-      </label>
-      <label for="cuisines-select">
-        <!-- Focus the element using Tab and use the up/down arrow keys to navigate -->
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" >
-          <option value="all">All Cuisines</option>
+        <label for="neighborhoods-select">
+          <!-- Focus the element using Tab and use the up/down arrow keys to navigate -->
+          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" >
+            <option value="all">All Areas</option>
+          </select>
         </label>
-      </select>
-      </div>
+        <label for="cuisines-select">
+            <!-- Focus the element using Tab and use the up/down arrow keys to navigate -->
+            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" >
+              <option value="all">All Cuisines</option>
+            </select>
+        </label>
+      </form>
       <ul id="restaurants-list"></ul>
     </section>
   </main>
