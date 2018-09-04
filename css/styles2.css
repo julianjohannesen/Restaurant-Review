@@ -1,17 +1,14 @@
-@charset "utf-8";
-
-/* CSS Document */
-
-/*========= ELEMENTS ==========*/
+/* ========= ELEMENTS ========== */
 
 :root {
-    /*========= COLORS ========*/
-    --text-color: #333333;
-    --text-back: #FDFDFD;
-    --heading-color: #F78500;
-    --heading-back: #333333;
-    --link-hover: rgb(0, 100, 255);
-    --hero-back: #252831;
+    /* ========= COLORS ======== */
+    --text-color: rgb(51, 51, 51);
+    --text-back: rgb(253, 253,253);
+    --heading-color: rgb(247,133,0);
+    --heading-back: rgb(51, 51, 51);
+    --link-hover: rgb(255, 251, 0);
+    --alt-link-hover: rgb(255, 20, 225);
+    --hero-back: rgb(51, 51, 51);
 }
 
 html {
@@ -24,6 +21,7 @@ body, table, td, th, p, ul, li, h1, h2, article, figcaption, figure, footer, hea
     color: var(--text-color);
     display: block;
     font-family: sans-serif;
+    line-height:1.5;
     margin: 0;
     padding: 0;
     position: relative;
@@ -37,13 +35,11 @@ a {
 
 a:hover, a:focus {
     color: var(--link-hover);
-    text-decoration: none;
-  
 }
 
 a:focus, select:focus, input:focus, button:focus {
-    outline: dotted white 2px;
-    outline-offset: 0;
+    outline: dotted white 0.1em;
+    outline-offset: 2px
 }
 
 a img {
@@ -67,7 +63,7 @@ h2 {
     text-align: left;
 }
 
-/*================== HEADER, MAIN, FOOTER ==================*/
+/* ================== HEADER, MAIN, FOOTER ================== */
 
 main#maincontent {
     background-color: var(--text-back);
@@ -85,7 +81,7 @@ footer#footer {
 /* ====================== Navigation ====================== */
 
 nav {
-    width: 100vw;
+    width: 100%;
 
     /* height: auto; */
     background-color: var(--hero-back);
@@ -98,34 +94,37 @@ nav h1 a {
 
 ul#breadcrumb {
     list-style: none;
-    background-color: var(--text-back);
+    background-color: var(--hero-back);
 }
 
 /* Display list items side by side */
 
 ul#breadcrumb li {
+    color: var(--heading-color);
+    background-color: var(--hero-back);
     display: inline;
+
 }
 
 /* Add a slash symbol (/) before/behind each list item */
 
 ul#breadcrumb li + li:before {
     padding: 0;
-    color: black;
+    color: var(--text-back);
     content: "/\00a0";
 }
 
 /* Add a color to all links inside the list */
 
 ul#breadcrumb li a {
-    color: var(--link-hover);
+    color: var(--heading-color);
     text-decoration: none;
 }
 
 /* Add a color on mouse-over */
 
 ul#breadcrumb li a:hover {
-    color: #01447E;
+    color: var(--link-hover);
     text-decoration: underline;
 }
 
@@ -137,24 +136,29 @@ div#map {
     background-color: var(--text-back);
 }
 
-/* ====================== Restaurant Filtering ====================== */
-
-div.filter-options {
-    width: 100vw;
-    background-color: var(--link-hover);
-    align-items: center;
-    padding: 1vw;
+#map a:hover, #map a:focus {
+    color: var(--alt-link-hover);
 }
 
-div.filter-options h2 {
+/* ====================== Restaurant Filtering ====================== */
+
+form.filter-options {
+    /* align-items: center; */
+    background-color: var(--hero-back);
+    padding: 1vw;
+    width: 100%;
+}
+
+form.filter-options h2 {
     color: white;
-    background-color: var(--link-hover);
+    background-color: var(--hero-back);
     font-size: 1em;
     padding-left: 0;
+    padding-top: 0;
     text-transform: capitalize;
 }
 
-div.filter-options select {
+form.filter-options select {
     background-color: white;
     border: 1px solid white;
     padding: 0.2vw 0.2vw 0.3vw;
@@ -162,7 +166,7 @@ div.filter-options select {
 
 /* ====================== Restaurant Listing ====================== */
 
-/* ================== GRID STUFF =================*/
+/* ================== GRID STUFF ================= */
 
 section#restaurants ul#restaurants-list {
     display: grid;
@@ -212,6 +216,10 @@ ul#restaurants-list li a {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+ul#restaurants-list li a:hover {
+    color: var(--link-hover);
 }
 
 /* ================================================================ */
