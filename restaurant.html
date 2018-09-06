@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'"> -->
     
-    <meta name="application-name" content="Restaurant Reviews">
     <title>Restaurant Reviews</title>
 
     <!-- Subject, Description, Author, Copyright -->
@@ -44,16 +43,21 @@
 </head>
 
 <body class="inside">
+  <!-- Skip link -->
+  <a href="#maincontent" class="skip-link">Skip to Main Content</a>
+
   <!-- Beginning header -->
   <header>
     <!-- Beginning nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/" title="Restaurant Reviews Home">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
+    <nav aria-label="Breadcrumb">
     <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
+      <li><a href="/" title="Back to home page">Home</a></li>
     </ul>
+  </nav>
     <!-- End breadcrumb -->
     <!-- End nav -->
   </header>
@@ -68,11 +72,32 @@
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+      <header>
+          <h1 id="restaurant-name"></h1>
+      </header>
+      <section id="photo-cuisine">
+        <img id="restaurant-img">
+        <p id="restaurant-cuisine"></p>
+      </section>
+      <section id="address-hours">
+        <p>Restaurant Address:</p>
+        <p id="restaurant-address"></p>
+        <table id="restaurant-hours" aria-label="Restaurant hours of operation by day of the week">
+        <thead>
+          <tr>
+              <th scope="col">
+                Day
+              </th>
+            <th scope="col">
+              Open - Close
+            </th>
+          </tr>
+        </thead>
+        <tbody id="restaurant-hours-body">
+
+        </tbody>
+        </table>
+      </section>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->

@@ -15,7 +15,7 @@ html {
     font-size: calc(50% + 1.5vw);
 }
 
-body, table, td, th, p, ul, li, h1, h2, article, figcaption, figure, footer, header, hgroup, menu, nav, section {
+body, p, ul, li, h1, h2, article, figcaption, figure, footer, header, hgroup, menu, nav, section {
     background-color: var(--text-back);
     box-sizing: border-box;
     color: var(--text-color);
@@ -80,6 +80,20 @@ footer#footer {
 
 /* ====================== Navigation ====================== */
 
+.skip-link {
+    position:absolute;
+    top: -999px;
+    left: 0;
+    background-color: #bf1722;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 nav {
     width: 100%;
 
@@ -93,8 +107,9 @@ nav h1 a {
 }
 
 ul#breadcrumb {
-    list-style: none;
     background-color: var(--hero-back);
+    list-style: none;
+    padding: 1vw;
 }
 
 /* Display list items side by side */
@@ -128,7 +143,7 @@ ul#breadcrumb li a:hover {
     text-decoration: underline;
 }
 
-/* ====================== Map ====================== */
+/* ===== Map ===== */
 
 div#map {
     height: 400px;
@@ -140,7 +155,7 @@ div#map {
     color: var(--alt-link-hover);
 }
 
-/* ====================== Restaurant Filtering ====================== */
+/* ===== Restaurant Filtering ===== */
 
 form.filter-options {
     /* align-items: center; */
@@ -164,17 +179,21 @@ form.filter-options select {
     padding: 0.2vw 0.2vw 0.3vw;
 }
 
-/* ====================== Restaurant Listing ====================== */
+/* ============================== */
+/* ===== RESTAURANT LISTING ===== */
+/* ============================== */
 
-/* ================== GRID STUFF ================= */
+/* ===== GRID STUFF ===== */
 
 section#restaurants ul#restaurants-list {
     display: grid;
     grid-auto-flow: row dense;
-    grid-gap: 2rem;
+    grid-gap: 2vw;
     grid-template-columns: repeat(3, 1fr);
 
 }
+
+/* ===== OTHER BITS ===== */
 
 ul#restaurants-list {
     background-color: #F3F3F3;
@@ -196,12 +215,11 @@ ul#restaurants-list .restaurant-img {
 ul#restaurants-list li h1 {
     font-size: 1.25em;
     text-align: left;
-
 }
 
 ul#restaurants-list p {
     background: var(--heading-back);
-    color: white;
+    color: var(--text-back);
     padding: 0 2vw;
 }
 
@@ -222,22 +240,16 @@ ul#restaurants-list li a:hover {
     color: var(--link-hover);
 }
 
-/* ================================================================ */
+/* ============================== */
+/* ===== RESTAURANT DETAILS ===== */
+/* ============================== */
 
-/* ====================== Restaurant Details ====================== */
-
-/* ================================================================ */
-
-/* The inside class appears in the body tag in the restaurant details view */
-
-/* ====== GRID BITS ======= */
+/* ===== GRID BITS ===== */
 
 body.inside main#maincontent {
     display: grid;
     grid-auto-rows: min-content;
     grid-template-columns: repeat(2, 1fr);
-
-    /* grid-template: repeat(2, 1fr) / repeat(2, 1fr); */
     align-items: start;
     justify-items: start;
     align-content: start;
@@ -246,28 +258,72 @@ body.inside main#maincontent {
 
 body.inside section#map-container {
     grid-row: 1/2;
-    grid-column: 2/3;
+    grid-column: 1/3;
 }
 
 body.inside section#restaurant-container {
-    grid-row: 1/2;
-    grid-column: 1/2;
+    grid-row: 2/3;
+    grid-column: 1/3;
+
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(2,1fr);
 }
 
 body.inside section#reviews-container {
+    grid-row: 3/4;
+    grid-column: 1/3;
+}
+
+.inside #restaurant-container header {
+    grid-row: 1/2;
+    grid-column: 1/3
+}
+
+.inside #photo-cuisine {
     grid-row: 2/3;
     grid-column: 1/2;
 }
 
-/* ====== OTHER BITS ======= */
+.inside #address-hours {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+#reviews-list {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-gap: 1vw;
+    grid-template-columns: repeat(2, 1fr); 
+}
+
+#reviews-list li {
+
+}
+
+/* ===== OTHER BITS ===== */
 
 body.inside header {
     width: 100%;
     z-index: 1000;
 }
 
+#address-hours p:first-of-type {
+    padding-top: 2vw;
+}
+
+#address-hours p {
+    padding-left: 2vw;
+}
+
+body.inside section#map-container {
+    /* Must set container height to push down restaurant name etc */
+    height: auto;
+}
+
 body.inside #map {
     background-color: var(--text-back);
+    height: 20vw;
 }
 
 h1#restaurant-name {
@@ -282,9 +338,27 @@ p#restaurant-cuisine {
     background-color: var(--heading-back);
     color: var(--text-back);
     font-weight: 300;
+    padding: 0;
     text-align: center;
     text-transform: uppercase;
     width: 100%;
+}
+
+#restaurant-hours {
+    padding: 2vw;
+}
+
+#restaurant-hours th {
+    color: var(--text-back);
+    background-color: var(--hero-back);
+}
+
+#restaurant-hours tr:nth-of-type(2n) {
+    background-color: rgb(220,220,220);
+}
+
+#restaurant-hours td {
+    color: var(--heading-back);
 }
 
 #reviews-container h2 {
@@ -294,10 +368,7 @@ p#restaurant-cuisine {
 
 #reviews-list li {
     background-color: #FFFFFF;
-    border: 2px solid var(--heading-back);
+    /* border: 2px solid var(--heading-back); */
     list-style-type: none;
-}
-
-#restaurant-hours td {
-    color: var(--heading-back);
+    padding: 2vw;
 }
