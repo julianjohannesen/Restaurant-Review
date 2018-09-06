@@ -58,18 +58,17 @@
     <!-- filter and restaurant listings -->
     <section id="restaurants" aria-label="The filter-options form allows users to select a neighborhood and type of cuisine to filter restaurant results. The restaurants-list list shows the filtered results.">
       <form id="filter-options" class="filter-options">
-        <h2>Filter Results</h2>
-        <label for="neighborhoods-select">
-          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" >
-            <option value="all">All Areas</option>
-          </select>
-        </label>
-        <label for="cuisines-select">
+        <h2 id="filter-form-header">Filter Results by Neighborhood and Type of Cuisine</h2>
+        <label id="neighborhoods-label" class="hidden" for="neighborhoods-select">Select a Neighborhood from the List</label>
+        <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="neighborhoods-label" onchange="updateRestaurants()" >
+          <option value="all">All Areas</option>
+        </select>
+        <label id="cuisines-label" class="hidden" for="cuisines-select">Select a Type of Cuisine from the List</label>
             <!-- Focus the element using Tab and use the up/down arrow keys to navigate -->
-            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" >
-              <option value="all">All Cuisines</option>
-            </select>
-        </label>
+        <select id="cuisines-select" name="cuisines" aria-labelledby="cuisines-label" onchange="updateRestaurants()" >
+          <option value="all">All Cuisines</option>
+        </select>
+        
       </form>
       <ul id="restaurants-list"></ul>
     </section>
