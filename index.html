@@ -58,7 +58,7 @@
     <!-- filter and restaurant listings -->
     <section id="restaurants" aria-label="The filter-options form allows users to select a neighborhood and type of cuisine to filter restaurant results. The restaurants-list list shows the filtered results.">
       <form id="filter-options" class="filter-options">
-        <h2 id="filter-form-header">Filter Results by Neighborhood and Type of Cuisine</h2>
+        <h2 id="filter-form-header">Filter Results</h2>
         <label id="neighborhoods-label" class="hidden" for="neighborhoods-select">Select a Neighborhood from the List</label>
         <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="neighborhoods-label" onchange="updateRestaurants()" >
           <option value="all">All Areas</option>
@@ -68,7 +68,6 @@
         <select id="cuisines-select" name="cuisines" aria-labelledby="cuisines-label" onchange="updateRestaurants()" >
           <option value="all">All Cuisines</option>
         </select>
-        
       </form>
       <ul id="restaurants-list"></ul>
     </section>

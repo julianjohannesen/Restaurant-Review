@@ -63,6 +63,11 @@ h2 {
     text-align: left;
 }
 
+.hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
 /* ================== HEADER, MAIN, FOOTER ================== */
 
 main#maincontent {
