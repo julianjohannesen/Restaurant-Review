@@ -4,15 +4,20 @@
     /* ========= COLORS ======== */
     --text-color: rgb(51, 51, 51);
     --text-back: rgb(253, 253,253);
-    --heading-color: rgb(247,133,0);
+    --heading-color: rgb(247,182,0);
     --heading-back: rgb(51, 51, 51);
     --link-hover: rgb(255, 251, 0);
-    --alt-link-hover: rgb(255, 20, 225);
+    --alt-link-hover: purple;
     --hero-back: rgb(51, 51, 51);
 }
 
 html {
     font-size: calc(50% + 1.5vw);
+}
+
+html *:focus {
+    outline: 0.1em solid purple;
+    outline-offset: 0.1em;
 }
 
 body, p, ul, li, h1, h2, article, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -21,7 +26,7 @@ body, p, ul, li, h1, h2, article, figcaption, figure, footer, header, hgroup, me
     color: var(--text-color);
     display: block;
     font-family: sans-serif;
-    line-height:1.5;
+    line-height:1.2;
     margin: 0;
     padding: 0;
     position: relative;
@@ -33,13 +38,9 @@ a {
     text-decoration: none;
 }
 
-a:hover, a:focus {
+a:hover {
     color: var(--link-hover);
-}
-
-a:focus, select:focus, input:focus, button:focus {
-    outline: dotted white 0.1em;
-    outline-offset: 2px
+    text-decoration: underline;
 }
 
 a img {
@@ -63,6 +64,10 @@ h2 {
     text-align: left;
 }
 
+small {
+    font-size: 100%;
+}
+
 .hidden {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
@@ -70,12 +75,12 @@ h2 {
 
 /* ================== HEADER, MAIN, FOOTER ================== */
 
-main#maincontent {
+#maincontent {
     background-color: var(--text-back);
     min-height: 100vh;
 }
 
-footer#footer {
+#footer {
     background-color: var(--heading-back);
     color: var(--text-back);
     letter-spacing: 0.5vw;
@@ -83,6 +88,14 @@ footer#footer {
     text-transform: uppercase;
 }
 
+#footer a {
+    color: var(--text-back);
+    font-weight: bold;
+}
+
+#footer a:hover {
+    color: var(--link-hover);
+}
 /* ====================== Navigation ====================== */
 
 .skip-link {
@@ -111,7 +124,7 @@ nav h1 a {
     color: white;
 }
 
-ul#breadcrumb {
+#breadcrumb {
     background-color: var(--hero-back);
     list-style: none;
     padding: 1vw;
@@ -119,7 +132,7 @@ ul#breadcrumb {
 
 /* Display list items side by side */
 
-ul#breadcrumb li {
+#breadcrumb li {
     color: var(--heading-color);
     background-color: var(--hero-back);
     display: inline;
@@ -128,7 +141,7 @@ ul#breadcrumb li {
 
 /* Add a slash symbol (/) before/behind each list item */
 
-ul#breadcrumb li + li:before {
+#breadcrumb li + li:before {
     padding: 0;
     color: var(--text-back);
     content: "/\00a0";
@@ -136,24 +149,28 @@ ul#breadcrumb li + li:before {
 
 /* Add a color to all links inside the list */
 
-ul#breadcrumb li a {
+#breadcrumb li a {
     color: var(--heading-color);
     text-decoration: none;
 }
 
 /* Add a color on mouse-over */
 
-ul#breadcrumb li a:hover {
+#breadcrumb li a:hover {
     color: var(--link-hover);
     text-decoration: underline;
 }
 
 /* ===== Map ===== */
 
-div#map {
+#map {
     height: 400px;
     width: 100vw;
     background-color: var(--text-back);
+}
+
+#map a {
+    font-weight: bold;
 }
 
 #map a:hover, #map a:focus {
@@ -162,14 +179,14 @@ div#map {
 
 /* ===== Restaurant Filtering ===== */
 
-form.filter-options {
+.filter-options {
     /* align-items: center; */
     background-color: var(--hero-back);
     padding: 1vw;
     width: 100%;
 }
 
-form.filter-options h2 {
+.filter-options h2 {
     color: white;
     background-color: var(--hero-back);
     font-size: 1em;
@@ -178,7 +195,7 @@ form.filter-options h2 {
     text-transform: capitalize;
 }
 
-form.filter-options select {
+.filter-options select {
     background-color: white;
     border: 1px solid white;
     padding: 0.2vw 0.2vw 0.3vw;
@@ -190,7 +207,7 @@ form.filter-options select {
 
 /* ===== GRID STUFF ===== */
 
-section#restaurants ul#restaurants-list {
+#restaurants ul#restaurants-list {
     display: grid;
     grid-auto-flow: row dense;
     grid-gap: 2vw;
@@ -200,35 +217,35 @@ section#restaurants ul#restaurants-list {
 
 /* ===== OTHER BITS ===== */
 
-ul#restaurants-list {
+#restaurants-list {
     background-color: #F3F3F3;
     list-style: outside none none;
     padding: 2rem;
     text-align: center;
 }
 
-ul#restaurants-list li {
+#restaurants-list li {
     background-color: var(--heading-back);
     box-shadow: 0.25rem 0.25rem 0.5rem 0.125rem #AAAAAA;
 }
 
-ul#restaurants-list .restaurant-img {
+#restaurants-list .restaurant-img {
     background-color: var(--heading-back);
     width: 100%;
 }
 
-ul#restaurants-list li h1 {
+#restaurants-list li h1 {
     font-size: 1.25em;
     text-align: left;
 }
 
-ul#restaurants-list p {
+#restaurants-list p {
     background: var(--heading-back);
     color: var(--text-back);
     padding: 0 2vw;
 }
 
-ul#restaurants-list li a {
+#restaurants-list li a {
     background-color: var(--heading-back);
     border: 1px solid white;
     color: var(--heading-color);
@@ -241,7 +258,7 @@ ul#restaurants-list li a {
     text-transform: uppercase;
 }
 
-ul#restaurants-list li a:hover {
+#restaurants-list li a:hover {
     color: var(--link-hover);
 }
 
@@ -251,7 +268,7 @@ ul#restaurants-list li a:hover {
 
 /* ===== GRID BITS ===== */
 
-body.inside main#maincontent {
+.inside #maincontent {
     display: grid;
     grid-auto-rows: min-content;
     grid-template-columns: repeat(2, 1fr);
@@ -261,12 +278,12 @@ body.inside main#maincontent {
     justify-content: start;
 }
 
-body.inside section#map-container {
+.inside #map-container {
     grid-row: 1/2;
     grid-column: 1/3;
 }
 
-body.inside section#restaurant-container {
+.inside #restaurant-container {
     grid-row: 2/3;
     grid-column: 1/3;
 
@@ -275,7 +292,7 @@ body.inside section#restaurant-container {
     grid-template-columns: repeat(2,1fr);
 }
 
-body.inside section#reviews-container {
+.inside #reviews-container {
     grid-row: 3/4;
     grid-column: 1/3;
 }
@@ -308,7 +325,7 @@ body.inside section#reviews-container {
 
 /* ===== OTHER BITS ===== */
 
-body.inside header {
+.inside header {
     width: 100%;
     z-index: 1000;
 }
@@ -321,25 +338,25 @@ body.inside header {
     padding-left: 2vw;
 }
 
-body.inside section#map-container {
+.inside #map-container {
     /* Must set container height to push down restaurant name etc */
     height: auto;
 }
 
-body.inside #map {
+.inside #map {
     background-color: var(--text-back);
     height: 20vw;
 }
 
-h1#restaurant-name {
+#restaurant-name {
     font-size: 1.5em;
 }
 
-img#restaurant-img {
+#restaurant-img {
     width: 100%;
 }
 
-p#restaurant-cuisine {
+#restaurant-cuisine {
     background-color: var(--heading-back);
     color: var(--text-back);
     font-weight: 300;
@@ -350,12 +367,16 @@ p#restaurant-cuisine {
 }
 
 #restaurant-hours {
-    padding: 2vw;
+    border: 1px solid var(--hero-back);
+    margin: 2vw;
+    padding: 0;
+
 }
 
 #restaurant-hours th {
     color: var(--text-back);
     background-color: var(--hero-back);
+    padding: 0.2vw 1vw;
 }
 
 #restaurant-hours tr:nth-of-type(2n) {
@@ -364,6 +385,7 @@ p#restaurant-cuisine {
 
 #restaurant-hours td {
     color: var(--heading-back);
+    padding: 0.2vw 1vw;
 }
 
 #reviews-container h2 {
@@ -373,7 +395,17 @@ p#restaurant-cuisine {
 
 #reviews-list li {
     background-color: #FFFFFF;
-    /* border: 2px solid var(--heading-back); */
+    border: 1px solid var(--heading-back);
     list-style-type: none;
-    padding: 2vw;
+    margin: 1vw;
+    padding: 1vw;
+}
+
+#reviews-list li h3, #reviews-list li time, #reviews-list li .rating   {
+    margin:0;
+    padding: 0.2vw;
+}
+
+#reviews-list li p {
+    padding: 0 0.5vw 0.5vw;
 }

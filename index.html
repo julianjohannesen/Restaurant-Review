@@ -2,51 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'"> -->
-    
-    <title>Restaurant Reviews</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'"> -->
 
-    <!-- Subject, Description, Author, Copyright -->
-    <meta name="subject" content="Restaurant details and reviews by geographic area">
-    <meta name="description" content="A restaurant review site that allows users to specify a location and see details and reviews or restaurants in that area.">
-    <link rel="author" href="humans.txt">
-    <!-- Provides information about an author or another person -->
-    <link rel="me" href="https://www.linkedin.com/in/julianjohannesen/" type="text/html">
-    <link rel="me" href="mailto:julian.johannesen@gmail.com">
-    <link rel="me" href="sms:+">
-    <link rel="license" href="copyright.html">
+  <title>Restaurant Reviews</title>
 
-    <!-- Search related -->
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow">
+  <!-- Subject, Description, Author, Copyright -->
+  <meta name="subject" content="Restaurant details and reviews by geographic area">
+  <meta name="description" content="A restaurant review site that allows users to specify a location and see details and reviews or restaurants in that area.">
+  <link rel="author" href="humans.txt">
+  <!-- Provides information about an author or another person -->
+  <link rel="me" href="https://www.linkedin.com/in/julianjohannesen/" type="text/html">
+  <link rel="me" href="mailto:julian.johannesen@gmail.com">
+  <link rel="me" href="sms:+">
+  <link rel="license" href="copyright.html">
 
-    <!-- Verify website ownership -->
-    <!-- <meta name="google-site-verification" content="verification_token">Google Search Console -->
-    <!-- <meta name="yandex-verification" content="verification_token">Yandex Webmasters -->
-    <!-- <meta name="msvalidate.01" content="verification_token">Bing Webmaster Center -->
-    <!-- <meta name="alexaVerifyID" content="verification_token">Alexa Console -->
-    <!-- <meta name="p:domain_verify" content="code_from_pinterest">Pinterest Console -->
-    <!-- <meta name="norton-safeweb-site-verification" content="norton_code">Norton Safe Web -->
+  <!-- Search related -->
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
 
-    <!-- <base href="https://julianjohannesen.github.io/restuarant-reviews/index.html"> -->
-    <!-- <link rel="canonical" href="https://julianjohannesen.github.io/restuarant-reviews/index.html"> -->
-    <!-- <link rel="index" href="https://julianjohannesen.github.io/restuarant-reviews/"> -->
-    
-    <!-- Link to an external CSS file -->
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/leaflet.css" />
-    <link rel="stylesheet" href="css/styles2.css">
+  <!-- Verify website ownership -->
+  <!-- <meta name="google-site-verification" content="verification_token">Google Search Console -->
+  <!-- <meta name="yandex-verification" content="verification_token">Yandex Webmasters -->
+  <!-- <meta name="msvalidate.01" content="verification_token">Bing Webmaster Center -->
+  <!-- <meta name="alexaVerifyID" content="verification_token">Alexa Console -->
+  <!-- <meta name="p:domain_verify" content="code_from_pinterest">Pinterest Console -->
+  <!-- <meta name="norton-safeweb-site-verification" content="norton_code">Norton Safe Web -->
 
-    <!-- <link rel="prerender" href="https://julianjohannesen.github.io/restaurant.html"> -->
+  <!-- <base href="https://julianjohannesen.github.io/restuarant-reviews/index.html"> -->
+  <!-- <link rel="canonical" href="https://julianjohannesen.github.io/restuarant-reviews/index.html"> -->
+  <!-- <link rel="index" href="https://julianjohannesen.github.io/restuarant-reviews/"> -->
+
+  <!-- Link to an external CSS file -->
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/leaflet.css" />
+  <link rel="stylesheet" href="css/styles2.css">
+
+  <!-- <link rel="prerender" href="https://julianjohannesen.github.io/restaurant.html"> -->
 </head>
 
 <body>
   <a href="#maincontent" class="skip-link">Skip to Main Content</a>
   <header>
     <nav>
-    <h1><a href="/" title="Restaurant Reviews Home">Restaurant Reviews</a></h1>
+      <h1><a href="/" title="Restaurant Reviews Home">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
@@ -60,21 +60,22 @@
       <form id="filter-options" class="filter-options">
         <h2 id="filter-form-header">Filter Results</h2>
         <label id="neighborhoods-label" class="hidden" for="neighborhoods-select">Select a Neighborhood from the List</label>
-        <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="neighborhoods-label" onchange="updateRestaurants()" >
+        <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="neighborhoods-label" onchange="">
           <option value="all">All Areas</option>
         </select>
         <label id="cuisines-label" class="hidden" for="cuisines-select">Select a Type of Cuisine from the List</label>
-            <!-- Focus the element using Tab and use the up/down arrow keys to navigate -->
-        <select id="cuisines-select" name="cuisines" aria-labelledby="cuisines-label" onchange="updateRestaurants()" >
+        <select id="cuisines-select" name="cuisines" aria-labelledby="cuisines-label" onchange="">
           <option value="all">All Cuisines</option>
         </select>
+        <button id="submit-button" type="submit" onclick="updateRestaurants();event.preventDefault();">Submit</button>
       </form>
       <ul id="restaurants-list"></ul>
     </section>
   </main>
 
   <footer id="footer">
-     <small>Copyright (c) 2017 <a href="/" title="Restaurant Reviews Home"><strong>Restaurant Reviews</strong></a> All Rights Reserved.</small>
+    <small aria-label="copyright notice">Copyright (c) 2017 <a href="/" title="Restaurant Reviews Home"><strong>Restaurant
+          Reviews</strong></a> All Rights Reserved.</small>
   </footer>
 
   <!-- Moved scripts below footer -->
