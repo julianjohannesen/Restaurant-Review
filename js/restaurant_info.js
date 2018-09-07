@@ -65,9 +65,11 @@ fetchRestaurantFromURL = (callback) => {
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
+  name.setAttribute("aria-label", restaurant.name);
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
+  address.setAttribute("aria-label", "Neighborhood and Address");
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
@@ -149,6 +151,7 @@ createReviewHTML = (review) => {
   li.appendChild(rating);
 
   const comments = document.createElement('p');
+  comments.setAttribute("class", "comments");
   comments.innerHTML = review.comments;
   li.appendChild(comments);
 

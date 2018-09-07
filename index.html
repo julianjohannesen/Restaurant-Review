@@ -52,12 +52,12 @@
 
   <main id="maincontent">
     <!-- map container -->
-    <section id="map-container" aria-label="A map of a neighborhood. Linked icons appear on the map indicating individual restaurants in the neighborhood.">
+    <section id="map-container" role="application" aria-label="A map of a neighborhood. Linked icons appear on the map indicating individual restaurants in the neighborhood.">
       <div id="map"></div>
     </section>
     <!-- filter and restaurant listings -->
-    <section id="restaurants" aria-label="The filter-options form allows users to select a neighborhood and type of cuisine to filter restaurant results. The restaurants-list list shows the filtered results.">
-      <form id="filter-options" class="filter-options">
+    <section id="restaurants" aria-label="This section contains a form that allows users to select a neighborhood and type of cuisine to filter restaurant results. The results are displayed in a list below the form.">
+      <form id="filter-options" class="filter-options" aria-labelled="filter-form-header">
         <h2 id="filter-form-header">Filter Results</h2>
         <label id="neighborhoods-label" class="hidden" for="neighborhoods-select">Select a Neighborhood from the List</label>
         <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="neighborhoods-label" onchange="">
@@ -67,9 +67,9 @@
         <select id="cuisines-select" name="cuisines" aria-labelledby="cuisines-label" onchange="">
           <option value="all">All Cuisines</option>
         </select>
-        <button id="submit-button" type="submit" onclick="updateRestaurants();event.preventDefault();">Submit</button>
+        <button id="submit-button" type="submit" onclick="updateRestaurants();event.preventDefault();">Filter</button>
       </form>
-      <ul id="restaurants-list"></ul>
+      <ul id="restaurants-list" role="group" aria-label="Restaurant list"></ul>
     </section>
   </main>
 
