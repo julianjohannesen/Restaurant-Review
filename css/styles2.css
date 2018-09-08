@@ -68,12 +68,14 @@ small {
     font-size: 100%;
 }
 
+/* ====== HELPERS ===== */
+
 .hidden {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* ================== HEADER, MAIN, FOOTER ================== */
+/* ====== HEADER, MAIN, FOOTER ===== */
 
 #maincontent {
     background-color: var(--text-back);
@@ -96,7 +98,8 @@ small {
 #footer a:hover {
     color: var(--link-hover);
 }
-/* ====================== Navigation ====================== */
+
+/* ===== Navigation ===== */
 
 .skip-link {
     position:absolute;
@@ -199,6 +202,10 @@ nav h1 a {
     background-color: white;
     border: 1px solid white;
     padding: 0.2vw 0.2vw 0.3vw;
+}
+
+.filter-options button {
+    padding: 0.2vw;
 }
 
 /* ============================== */
@@ -319,23 +326,25 @@ nav h1 a {
     grid-template-columns: repeat(2, 1fr); 
 }
 
-#reviews-list li {
-
+@media screen and (max-width:799px){
+    /* ===== GRID MODIFICATIONS ===== */
+    .inside #photo-cuisine {
+        grid-column: 1/3;
+    }
+    .inside #address-hours {
+        grid-row: 3/4;
+        grid-column: 1/3;
+    }
+    #reviews-list {
+        grid-template-columns: 1fr; 
+    }
 }
 
-/* ===== OTHER BITS ===== */
+/* ===== MAP, HEADER, PHOTO, CUISINE  ===== */
 
 .inside header {
     width: 100%;
     z-index: 1000;
-}
-
-#address-hours p:first-of-type {
-    padding-top: 2vw;
-}
-
-#address-hours p {
-    padding-left: 2vw;
 }
 
 .inside #map-container {
@@ -366,6 +375,16 @@ nav h1 a {
     width: 100%;
 }
 
+/* ===== ADDRESS AND HOURS ===== */
+
+#address-hours p:first-of-type {
+    padding-top: 2vw;
+}
+
+#address-hours p {
+    padding-left: 2vw;
+}
+
 #restaurant-hours {
     border: 1px solid var(--hero-back);
     margin: 2vw;
@@ -388,9 +407,12 @@ nav h1 a {
     padding: 0.2vw 1vw;
 }
 
+/* ===== REVIEWS ===== */
+
 #reviews-container h2 {
     color: var(--heading-color);
     font-weight: 300;
+    margin-top: 0.2vw;
 }
 
 #reviews-list li {

@@ -46,7 +46,7 @@
   <a href="#maincontent" class="skip-link">Skip to Main Content</a>
   <header>
     <nav>
-      <h1><a href="/" title="Restaurant Reviews Home">Restaurant Reviews</a></h1>
+      <h1><a href="/" aria-label="Restaurant Reviews Home">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
@@ -57,17 +57,17 @@
     </section>
     <!-- filter and restaurant listings -->
     <section id="restaurants" aria-label="This section contains a form that allows users to select a neighborhood and type of cuisine to filter restaurant results. The results are displayed in a list below the form.">
-      <form id="filter-options" class="filter-options" aria-labelled="filter-form-header">
+      <form id="filter-options" class="filter-options" aria-labelledby="filter-form-header">
         <h2 id="filter-form-header">Filter Results</h2>
         <label id="neighborhoods-label" class="hidden" for="neighborhoods-select">Select a Neighborhood from the List</label>
-        <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="neighborhoods-label" onchange="">
+        <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="neighborhoods-label">
           <option value="all">All Areas</option>
         </select>
         <label id="cuisines-label" class="hidden" for="cuisines-select">Select a Type of Cuisine from the List</label>
-        <select id="cuisines-select" name="cuisines" aria-labelledby="cuisines-label" onchange="">
+        <select id="cuisines-select" name="cuisines" aria-labelledby="cuisines-label">
           <option value="all">All Cuisines</option>
         </select>
-        <button id="submit-button" type="submit" onclick="updateRestaurants();event.preventDefault();">Filter</button>
+        <button id="submit-button" type="submit" onclick="updateRestaurants();event.preventDefault();">Submit</button>
       </form>
       <ul id="restaurants-list" role="group" aria-label="Restaurant list"></ul>
     </section>
