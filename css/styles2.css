@@ -327,7 +327,15 @@ nav h1 a {
 }
 
 @media screen and (max-width:799px){
-    /* ===== GRID MODIFICATIONS ===== */
+
+    /* ===== GRID FOR MOBILE  ===== */
+
+    #restaurants ul#restaurants-list {
+        grid-gap: 1vw;
+        grid-template-columns: 1fr;
+    
+    }
+    
     .inside #photo-cuisine {
         grid-column: 1/3;
     }
@@ -337,6 +345,12 @@ nav h1 a {
     }
     #reviews-list {
         grid-template-columns: 1fr; 
+    }
+
+    /* ===== OTHER MODIFICATIONS ===== */
+
+    #map {
+        min-height: 250px;
     }
 }
 
