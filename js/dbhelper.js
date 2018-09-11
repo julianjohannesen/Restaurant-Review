@@ -164,7 +164,6 @@ class DBHelper {
       url: DBHelper.urlForRestaurant(restaurant)
       })
       marker.addTo(newMap);
-      console.log(restaurant);
     return marker;
   } 
 
