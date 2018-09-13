@@ -9,7 +9,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+  if ("serviceWorker" in navigator) {
+    registerWorker();
+  }
 });
+
+/**
+ * Register Service Worker
+ */
+function registerWorker() {
+  function successHandler(reg) {console.log("Success: ", reg, "Scope is: ", reg.scope)};
+  function errorHandler(err) {console.log( "ServiceWorker registration failed: ", err);}
+  // Register the service worker in this script and log out success or failure
+  navigator.serviceWorker.register("../sw.js").then(successHandler,errorHandler);
+};
 
 /**
  * Fetch all neighborhoods and set their HTML.
@@ -188,3 +201,5 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 } 
+
+
