@@ -168,5 +168,4 @@ class DBHelper {
       marker.addTo(newMap);
     return marker;
   } 
-
 }
